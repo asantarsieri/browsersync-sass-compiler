@@ -2,7 +2,6 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const browserSync = require('browser-sync').create();
-const sourcemaps = require('gulp-sourcemaps');
 
 sass.compiler = require('node-sass');
 
@@ -51,15 +50,12 @@ gulp.task('serve', function() {
 // compile sass files
 gulp.task('sass', function() {
     return gulp.src(settings.sassDir + '/**/*.scss')
-        .pipe(sourcemaps.init())
-        .pipe(sourcemaps.write('./maps'))
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest(settings.distDir + settings.cssDir));
 });
 
 /**
  * Default task: running just `gulp` will compile the sass,
- * compile the site, launch BrowserSync then watch
- * files for changes
+ * launch BrowserSync then watch files for changes
  */
-gulp.task('default', gulp.series('serve'));
+gulp.task('default', gulp.series('sass', 'serve'));

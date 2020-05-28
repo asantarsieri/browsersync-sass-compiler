@@ -19,7 +19,6 @@ Simple [browsersync](https://www.browsersync.io) starterpack with html, css and 
  - browser-sync: ^2.26.7
  - gulp: ^4.0.2
  - gulp-sass: ^4.1.0
- - gulp-sourcemap: ^2.6.5
  - node-sass: ^4.14.1
 
 ### Troubleshooting
