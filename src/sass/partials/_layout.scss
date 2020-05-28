@@ -3,6 +3,12 @@
     display: table;
     clear: both;
 }
+*,
+*:before,
+*:after,
+input[type="search"] {
+    @include box-sizing(border-box);
+}
 html {
     font-family: sans-serif;
 }
@@ -10,12 +16,21 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 0 0.7em;
     line-height: 1.2;
 }
+a {
+    &:link, &:visited {
+        text-decoration: none;
+    }
+    &:hover, &:focus, &:active {
+        color: $blue_main--dark;
+        text-decoration: underline;
+    }
+    & img {
+        border: none;
+    }
+}
 header {
     padding: 5vh 10vw;
-}
-
-header {
-    background-color: #00B4F0;
+    background-color: $blue_main;
 }
 .container {
     display: flex;
@@ -35,11 +50,14 @@ nav {
     background-color: #F03CF0;
 }
 body, footer {
-    background-color: #0078A0;
+    background-color: $blue_main;
 }
 footer {
 	padding: 2em;
-	color: #fff
+	color: #fff;
+    & a {
+            color: $blue_main--dark;
+    }
 }
 
 @media only screen and (max-width: 600px) {

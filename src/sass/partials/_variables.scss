@@ -1,42 +1,5 @@
 // =colors
 // ---------------------------------------------------------------
-$blue_main: rgb(0,166,226); // #00a6e2
+$blue_main: rgb(0, 120, 160); // #0078A0
 $blue_main--dark: darken($blue_main, 20%);
 $blue_main--tsp: transparentize($blue_main, .2);
-$grey_main: rgb(62,62,64); // #3e3e40;
-$grey_main--light: rgb(240,240,245); // #f0f0f5;
-$grey_main--tsp: transparentize($grey_main, .13);
-$grey_secondary: rgb(102,102,102); //#666
-$grey_ui: rgb(212,212,217); //#d4d4d9
-$bg_main: rgb(241, 241, 241); //#f1f1f1
-
-$shadow_global: rgba(0, 0, 0, 0.6);
-
-$facebook_official: rgb(59,89,152); //#3b5998
-$twitter_official: rgb(29,161,242); //#1da1f2
-
-//boxes
-$warning: rgba(138, 109, 59, 1); // #8a6d3b
-$warning--light: rgba(253, 253, 189,1);
-$success: rgba(60, 118, 61, 1); // #3c763d
-$success--light: lighten($success, 60%);
-$error: rgba(169, 68, 66, 1);// #a94442
-$error--light: lighten($error, 40%);
-$info: rgba(49, 112, 143, 1); // #31708f
-$info--light: lighten($info, 50%);
-
-//fx
-$global_trans_timefunc: cubic-bezier(0.5, 0, 1, 1);
-
-// =heights & widths & decorations
-// ---------------------------------------------------------------
-$global_mb: 1.4375em; // global margin-bottom
-$global_box_pd: 1.25em; // global box-padding 20px
-
-// =fonts
-// ---------------------------------------------------------------
-$fontstack__sans_serif_global: 'Open Sans', Helvetica, Geneva, sans-serif;
-$fontstack__sans_serif_title: 'Gotham-Bold', Montserrat, sans-serif;
-
-// =grid
-// ---------------------------------------------------------------
