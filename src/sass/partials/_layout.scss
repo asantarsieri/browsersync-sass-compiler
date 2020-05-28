@@ -1,0 +1,53 @@
+.cf:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+html {
+    font-family: sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 0.7em;
+    line-height: 1.2;
+}
+header {
+    padding: 5vh 10vw;
+}
+
+header {
+    background-color: #00B4F0;
+}
+.container {
+    display: flex;
+}
+main, nav {
+	padding: 1em;
+}
+main {
+    float: right;
+    width: calc(80% - 2em);
+    background-color: #00F0B4;
+}
+nav {
+    float: left;
+    padding: 1em;
+    width: calc(20% - 2em);
+    background-color: #F03CF0;
+}
+body, footer {
+    background-color: #0078A0;
+}
+footer {
+	padding: 2em;
+	color: #fff
+}
+
+@media only screen and (max-width: 600px) {
+	.container {
+        flex-direction: column;
+    }
+    nav, main {
+		float: none;
+		width: calc(100% - 2em);;
+		}
+}

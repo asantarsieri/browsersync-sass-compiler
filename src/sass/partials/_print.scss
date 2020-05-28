@@ -1,0 +1,17 @@
+body {
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	font: 12pt/1.5 Georgia, "Times New Roman", Times, Garamond, serif;
+	color: #000;
+	background-color: #fff;
+	background-image: none;
+	}
+	
+/* =all disabled elements for print
+--------------------------------------------------------------- */
+nav[role="navigation"], form,
+.accesskeys, .header, .mainnav, .subnav, .sidebar, .footer, .services, .backlink, .invis, .sr, .sr-only, .print-hidden, .breadcrumb,
+.region, .country-name, .url, .none, .searchresults, .dayfilter, .mobilenav, .pagination, .btn, svg {
+	display: none;
+	}

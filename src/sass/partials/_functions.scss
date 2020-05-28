@@ -1,0 +1,6 @@
+/* =functions
+--------------------------------------------------------------- */
+
+@function calc-percent($child, $parent) {
+	@return ($child / $parent) * 100%;
+}

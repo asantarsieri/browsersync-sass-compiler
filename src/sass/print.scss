@@ -1,0 +1,13 @@
+/* ***********************************************************************************
+FileName			: print.scss
+Date				: 28.05.2020
+Author				: asantarsieri
+Purpose				: sass boilerplate / print-css
+Modification Log	: check git
+*********************************************************************************** */
+
+@media print {
+
+	@import "partials/print";
+
+};
