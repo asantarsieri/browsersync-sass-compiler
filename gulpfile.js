@@ -12,17 +12,12 @@ const settings = {
     sassDir: './src/sass',
     distDir: './dist',
     cssDir: '/css',
-    jsDir: '/js'
+    jsDir: '/js',
+    imgDir: '/img'
 };
-
-/**
- * serve task that will do the following things:
- * - launch browserSync plus index.html 
- * - watch the changes for html, css and js files in the source directory
- * - compile sass to your distribution directory
- * - create sourcemaps
- **/
-gulp.task('serve', function() {
+ 
+// launch browsersync, watch for sass changes
+gulp.task('bs', function() {
 
     /**
      * Launch BrowserSync from publicDir
@@ -32,18 +27,10 @@ gulp.task('serve', function() {
         // index: "index.html", /* index.html is standard and could be changed to "whatever.html" */
         browser: "google chrome",
         notify: true,
-        injectChanges: false
+        injectChanges: false,
+        files: [settings.distDir + "/**/*.css", settings.distDir + "js/*.js", "*.html"],
     });
-
-    /**
-     * watch for changes in html and css files
-     */
-    gulp.watch([
-        settings.publicDir + "/**/*.html",
-        settings.cssDir + "/**/*.css",
-        settings.jsDir + "/**/*.js",
-        ])
-    .on('change', browserSync.reload);
+    gulp.watch(settings.sassDir + '/**/*.scss', gulp.series('sass')); // run the sass-task (see below) on .scss filechanges 
 
 });
 
@@ -51,11 +38,23 @@ gulp.task('serve', function() {
 gulp.task('sass', function() {
     return gulp.src(settings.sassDir + '/**/*.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest(settings.distDir + settings.cssDir));
+        .pipe(gulp.dest(settings.distDir + settings.cssDir))
+        .pipe(browserSync.stream());
+});
+
+// copy assets (scripts, images, fonts etc.)
+gulp.task('copyassets', function(done) {
+    gulp.src([settings.srcDir + settings.jsDir + '/**/*'])
+        .pipe(gulp.dest(settings.distDir + settings.jsDir));
+        done() //callback for Gulp4
 });
 
 /**
- * Default task: running just `gulp` will compile the sass,
- * launch BrowserSync then watch files for changes
- */
-gulp.task('default', gulp.series('sass', 'serve'));
+ * serve task that will do the following things:
+ * - launch browserSync plus index.html 
+ * - watch for changes of html, css and js files in the source directory
+ * - watch for changes of .scss-files and compile sass to your distribution directory
+ **/
+
+gulp.task('serve', gulp.series('sass', 'copyassets', 'bs', function() {
+}));
