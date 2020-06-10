@@ -6,7 +6,7 @@ Simple [browsersync](https://www.browsersync.io) starterpack with html, css and 
 ### Usage
  - `$ npm install`
  - `$ sudo npm install gulp -g` (run `npm config set prefix /usr/local` if gulp isn't installed globally but in your `~`)
- - run `$ gulp`
+ - run `$ gulp serve`
  
 #### Contains
  - Gulp
