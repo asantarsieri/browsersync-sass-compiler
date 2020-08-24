@@ -1,4 +1,4 @@
-# browsersync-starterpack
+# browsersync-sass-starterpack
 
 Simple [browsersync](https://www.browsersync.io) starterpack with html, css and js filewatcher, as well as sass compiler.
 
